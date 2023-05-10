@@ -80,7 +80,7 @@ def fibonacci(n: Int): Long = {
 def isPrime(n: Int): Boolean = {
   @tailrec
   def checkPrimeNum(numChecker: Int): Boolean = {
-
+  ???
   }
   if(n ==1 ) false
   else checkPrimeNum( numChecker = n)
