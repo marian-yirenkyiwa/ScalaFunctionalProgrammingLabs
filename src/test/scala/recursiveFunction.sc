@@ -4,14 +4,14 @@ def sumUntil(n: Int): Int = {
   else n + sumUntil(n - 1)
 }
 
-//sumUntil(5)
+sumUntil(5)
 
 def calcFactorial(n: Int): Int = {
   if(n <= 1) 1
   else n * calcFactorial(n - 1)
 }
 
-//calcFactorial(3)
+calcFactorial(3)
 
 def newSumUntil(n: Int): Int = {
 
@@ -23,7 +23,7 @@ def newSumUntil(n: Int): Int = {
   loop(n, 0) //base case
 }
 
-//sumUntil(5)
+sumUntil(5)
 
 //Return the sum of the numbers between two numbers a and b
 
@@ -32,8 +32,8 @@ def sumBetweenNumbers(a: Int, b: Int): Int = {
   else a + sumBetweenNumbers(a+1, b)
 }
 
-//sumBetweenNumbers(2, 5)
-//sumBetweenNumbers(1, 5)
+sumBetweenNumbers(2, 5)
+sumBetweenNumbers(1, 5)
 
 // -- solution 2 using tail recursive --
 def sumNumbers(a: Int, b: Int): Int = {
@@ -45,7 +45,8 @@ def sumNumbers(a: Int, b: Int): Int = {
   loop(a, b, 0)
 }
 
-//sumNumbers(1, 5)
+sumNumbers(1, 5)
+
 
 //Calculate the nth fibonacci number. Use the Fibonacci example
 // to convince yourself only the tailrec solution is stack safe
@@ -65,42 +66,45 @@ def fibonacci(n: Int): Long = {
   else loopFibonacci(spTerm = 0, pTerm = 1, nextTerm = 3)
 }
 
-//fibonacci(1)
-//fibonacci(2)
-//fibonacci(3)
-//fibonacci(4)
-//fibonacci(7)
-//fibonacci(8)
-//fibonacci(9)
-//fibonacci(13)
-//fibonacci(25)
-//fibonacci(6)
+fibonacci(1)
+fibonacci(2)
+fibonacci(3)
+fibonacci(4)
+fibonacci(7)
+fibonacci(8)
+fibonacci(9)
+fibonacci(13)
+fibonacci(25)
+fibonacci(6)
 
-//a recursive function to check whether a number is prime
+//a tail recursive function to check whether a number is prime
+
+//divide the number by 2 to the number-1
+//if number == divisor then true
+//else if number%divisor == 0 then false
+// else perform function
+
 def isPrime(n: Int): Boolean = {
   @tailrec
-  def checkPrimeNum(numChecker: Int): Boolean = {
-  ???
+  def checkPrimeNum(divisor: Int): Boolean = {
+    if(n == divisor | divisor > n/2) true
+    else if(n%divisor == 0) false
+    else checkPrimeNum(divisor + 1)
   }
   if(n ==1 ) false
-  else checkPrimeNum( numChecker = n)
+  else checkPrimeNum( divisor = 2)
 }
-
-//3%2 !=0  returns true
-//3%1 != 0 false
 
 isPrime(1)
 isPrime(2)
 isPrime(3)
-//isPrime(4)
-//isPrime(5)
+isPrime(4)
+isPrime(5)
+isPrime(10)
+isPrime(53)
 
-//divide the number by 2 to the number-1
-//else if number == divisor then true
-//if number%divisor == 0 then false
-// else perform function
 
-//4
+
 
 
 
