@@ -36,6 +36,7 @@ object AnotherMain extends App{
   val myArray = Array(1,2,3,4,5)
   println(myArray(0))
   myArray.foreach(println(_))
+
 }
 
 //functions as arguments in a function must have a return type
